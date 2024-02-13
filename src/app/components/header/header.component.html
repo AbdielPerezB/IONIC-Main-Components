@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- I-buttons es para una colección de botones.
+    slot = start, significa que va posicionado a la izquierda -->
+    <ion-buttons slot="start"> 
+      <ion-buttons slot="start">
+        <!-- defaultHref="/", significa que por default el botón siempre me regredará al componente inicio.-->
+        <ion-back-button
+          defaultHref="/" 
+          text="regresar"
+          color="primary"></ion-back-button>
+      </ion-buttons>
+    </ion-buttons>
+
+    <!-- Aqui usamos la variable "titulo" que creamos en el typescript -->
+    <ion-title class="ion-text-capitalize">{{titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
