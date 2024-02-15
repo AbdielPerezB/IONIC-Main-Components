@@ -1,9 +1,34 @@
 <app-header titulo="alert"></app-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">alert</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- V1. Solo una simple alerta -->
+  <ion-button id="present-alert" expand="block">Button V1</ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="A Short Title Is Best"
+    subHeader="A Sub Header Is Optional"
+    message="A message should be a short, complete sentence."
+    [buttons]="alertButtons">
+  </ion-alert>
+
+  <!--V2.  When more control is needed -->
+  <ion-button (click)="presentAlert()"
+              expand="block">
+    Button V2
+  </ion-button>
+
+  <!-- V2.1 MultipleButtons -->
+  <ion-button (click)="presentAlertMultipleButtons()" expand="block">
+    Button V2.1 Multiple Buttons
+  </ion-button>
+
+  <!-- Inputs (Prompt) -->
+  <ion-button id="alert-input" expand="block">Button Input</ion-button>
+  <ion-alert
+    trigger="alert-input"
+    header="Please enter your info"
+    [buttons]="buttons"
+    [inputs]="alertInputs">
+  </ion-alert>
+
 </ion-content>
