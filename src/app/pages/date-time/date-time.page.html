@@ -1,0 +1,66 @@
+<app-header titulo="Datatime"></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-list>
+    <!-- Fecha de nacimiento -->
+    <ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
+      <ion-datetime-button slot="end" datetime="fechaNacimientoDate"></ion-datetime-button>
+    </ion-item>
+
+    <!-- Min y Max -->
+    <ion-item>
+      <ion-label>Mínimos y Máximos</ion-label>
+      <ion-datetime-button slot="end" datetime="minAndMax"></ion-datetime-button>
+    </ion-item>
+
+    <!-- Años -->
+    <ion-item>
+      <ion-label>Años</ion-label>
+      <ion-datetime-button slot="end" datetime="years"></ion-datetime-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="fechaNacimientoDate"
+                    presentation="date"
+                    [value]="fechaNaci.toISOString()"
+                    [showDefaultButtons]="true"
+                    doneText="Aceptar"
+                    cancelText="Cancelar"
+                    (ionChange)="cambioFecha($event)">
+      </ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Minimos y máximos -->
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="minAndMax"
+                    presentation="date"
+                    min="2015-01-01"
+                    max="2025-12-31"
+                    [showDefaultButtons]="true"
+                    doneText="Aceptar"
+                    cancelText="Cancelar">
+      </ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <!-- Años -->
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="years" 
+                    presentation="year"
+                    [showDefaultButtons]="true"
+                    doneText="Aceptar"
+                    cancelText="Cancelar"
+                    min="2015"
+                    max="2025">
+      </ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
