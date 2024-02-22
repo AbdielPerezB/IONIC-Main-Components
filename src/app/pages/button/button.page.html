@@ -1,0 +1,146 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-buttons  slot="start" [collapse]="false">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Buttons</ion-title>
+
+    <!-- End Toolbar -->
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()" color="danger">
+        <ion-icon slot="icon-only"
+                  [name]="favorito? 'heart':'heart-outline'">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Defauls Buttons -->
+  <ion-toolbar>
+    <!-- Por tener los slots de prumary y secondary, los botones toman esas posiciones por default,
+         sin importar en qué orden escribimos las etiquetas -->
+    <ion-buttons slot="secondary">
+      <ion-button> Secondary </ion-button>
+    </ion-buttons>
+
+    <ion-title>Default Buttons</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button> Primary </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <!-- Icon buttons -->
+  <ion-toolbar>
+    <ion-title>Icon Buttons</ion-title>
+
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <!-- Solid buttons -->
+  <ion-toolbar>
+    <ion-title>Solid Buttons</ion-title>
+
+    <ion-buttons slot="secondary">
+      <ion-button fill="solid">
+        <ion-icon slot="start" name="person-circle"></ion-icon>
+        Contact
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="primary">
+      <ion-button fill="solid">
+        Help
+        <ion-icon slot="end" name="help-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <!-- Outline Buttons -->
+  <ion-toolbar>
+    <ion-title>Outline Buttons</ion-title>
+
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline">
+        <ion-icon slot="start" name="star"></ion-icon>
+        Star
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="primary">
+      <ion-button fill="outline">
+        Edit
+        <ion-icon slot="end" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <!-- back button -->
+  <ion-toolbar>
+    <ion-title>Back Button</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <!-- Menu Button -->
+  <ion-toolbar>
+    <ion-title>Menu Button</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- Collapsible buttons -->
+    <ion-header>
+      <ion-toolbar>
+        <ion-title size="large">Title</ion-title>
+        <ion-buttons [collapse]="true" slot="end">
+          <ion-button>Button</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+  
+    <div class="ion-padding">Scroll the list to see the title & buttons collapse.</div>
+  
+    <ion-list>
+      <ion-item>Item 1</ion-item>
+      <ion-item>Item 2</ion-item>
+      <ion-item>Item 3</ion-item>
+      <ion-item>Item 4</ion-item>
+      <ion-item>Item 5</ion-item>
+      <ion-item>Item 6</ion-item>
+      <ion-item>Item 7</ion-item>
+      <ion-item>Item 8</ion-item>
+      <ion-item>Item 9</ion-item>
+      <ion-item>Item 10</ion-item>
+      <ion-item>Item 11</ion-item>
+      <ion-item>Item 12</ion-item>
+      <ion-item>Item 13</ion-item>
+      <ion-item>Item 14</ion-item>
+      <ion-item>Item 15</ion-item>
+      <ion-item>Item 16</ion-item>
+      <ion-item>Item 17</ion-item>
+      <ion-item>Item 18</ion-item>
+      <ion-item>Item 19</ion-item>
+      <ion-item>Item 20</ion-item>
+    </ion-list>
+</ion-content>
