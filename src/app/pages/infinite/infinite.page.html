@@ -1,0 +1,17 @@
+<app-header titulo="Inifinte"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let item of data; index as i">
+      <ion-label>Item: {{i+1}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px"
+                       (ionInfinite)="loadData()">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" 
+                                 loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
