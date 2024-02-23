@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
+import {Componente} from '../../components/interfaces/interfaces'
 
-// Es como si hicieramos un objeto
-interface Componente {
-  icon: string;
-  name: string;
-  redirectTo: string;
-}
 
 @Component({
   selector: 'app-inicio',
@@ -14,83 +12,17 @@ interface Componente {
 })
 export class InicioPage implements OnInit {
 
-  //Utilizamos la interdaz que creamos
-  public componentes: Componente[] = [
-    {
-      icon: "american-football-outline",
-      name: "Action Sheet",
-      redirectTo: "/action-sheet"
-    },
-    {
-      icon: "alert-circle-outline",
-      name: "Alert",
-      redirectTo: "/alert"
-    },
-    {
-      icon: "beaker-outline",
-      name: "Avatar",
-      redirectTo: "/avatar"
-    },
-    {
-      icon: "radio-button-off-outline",
-      name: "Buttons",
-      redirectTo: "/button"
-    },
-    {
-      icon: "card-outline",
-      name: "Cards",
-      redirectTo: "/card"
-    },
-    {
-      icon: "checkmark-circle-outline",
-      name: "Check Box",
-      redirectTo: "/check"
-    },
-    {
-      icon: "calendar-outline",
-      name: "Datatime",
-      redirectTo: "/date-time"
-    },
-    {
-      icon: "car-outline",
-      name: "Fab Buttons",
-      redirectTo: "/fab"
-    },
-    {
-      icon: "grid-outline",
-      name: "Grid",
-      redirectTo: "/grid"
-    },
-    {
-      icon: "infinite-outline",
-      name: "Infinite",
-      redirectTo: "/infinite"
-    },
-    {
-      icon: "hammer-outline",
-      name: "Input",
-      redirectTo: "/input"
-    },
-    {
-      icon: "list-outline",
-      name: "List - Sliding",
-      redirectTo: "/list"
-    },
-    {
-      icon: "reorder-three-outline",
-      name: "List - reorder",
-      redirectTo: "/list-reorder"
-    },
-    {
-      icon: "refresh-circle-outline",
-      name: "Loading",
-      redirectTo: "/loading"
-    }
-  ];
+  componentes!: Observable<Componente[]>;
 
-  constructor() { }
+  constructor(private menuCtrl:MenuController,
+              private dataservice:DataService) { }
 
   ngOnInit() {
+    this.componentes = this.dataservice.getMenuOts();
+  }
+
+  mostrarMenu(){
+    this.menuCtrl.open('first');
   }
 
 }

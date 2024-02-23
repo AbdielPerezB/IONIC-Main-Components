@@ -1,5 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
+    <!-- Parte dificil de implementar el boton menu -->
+    <!-- <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+
+    <!-- Manera fácil -->
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first" color="primary"></ion-menu-button>
+    </ion-buttons>
+
     <ion-title color="primary">Componentes</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +30,7 @@
 
   <!-- V2. Usando listas -->
   <ion-list>
-    <ion-item *ngFor="let c of componentes"
+    <ion-item *ngFor="let c of componentes | async"
               [routerLink]="c.redirectTo"
               detail="true">
       <ion-icon [name]="c.icon"
