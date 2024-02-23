@@ -1,13 +1,7 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>loading</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Loading"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">loading</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-button (click)="mostrarLoading()" expand="block" fill="clear" shape="round">
+    Mostrar Loading
+  </ion-button>
 </ion-content>
