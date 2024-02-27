@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressPage implements OnInit {
 
+  porcentaje: number = 0.5;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  rangeChange(e: any){
+    // console.log(e.detail.value);
+    this.porcentaje= e.detail.value / 100;
   }
 
 }
