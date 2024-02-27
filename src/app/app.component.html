@@ -6,17 +6,20 @@
         <ion-title>Components</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
+
+    <ion-content>
       <ion-list>
-        <ion-item *ngFor="let c of componentes | async"
-                  [routerLink]="c.redirectTo"
-                  detail="true">
-          <ion-icon [name]="c.icon"
-                    slot="start"
-                    color="primary">
-          </ion-icon> <!-- es [name] entre corchetes para hacer referencia a nuestro elemento del ts -->
-          {{c.name}}
-        </ion-item>
+        <ion-menu-toggle *ngFor="let c of componentes | async">
+          <ion-item [routerLink]="c.redirectTo"
+                    detail="true">
+            <ion-icon [name]="c.icon"
+                      slot="start"
+                      color="primary">
+            </ion-icon> <!-- es [name] entre corchetes para hacer referencia a nuestro elemento del ts -->
+            {{c.name}}
+          </ion-item>
+
+        </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>
