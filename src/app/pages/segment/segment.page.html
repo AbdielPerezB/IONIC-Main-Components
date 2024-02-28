@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="regresar" color="primary" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary">Segment</ion-title>
+  </ion-toolbar>
+
+  <!-- Lo coloco dentro del header para que no desaparezca con el scrool -->
+  <ion-segment value="" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="DC Comics">
+      <ion-label>DC Comics</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Marvel Comics">
+      <ion-label>Marvel Comics</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Segment</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let heroe of (superHeroes | async) | filtro: textoAbuscar:'publisher' ">
+      <ion-label>
+        <h3>{{heroe.superhero}} <small>{{heroe.alter_ego}}</small></h3>
+        <p>
+          {{heroe.first_appearance}}
+        </p>
+      </ion-label>
+
+      <ion-label slot="end" class="ion-text-right">{{heroe.publisher}}</ion-label>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
